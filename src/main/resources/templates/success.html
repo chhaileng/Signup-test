@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>SMS Authentication</title>
+<script th:src="@{/static/js/sms-login.js}"></script>
+<script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+
+</head>
+<body>
+	<p th:inline="text">User's ID: [[${PHONEUSER.user_id}]]</p>
+    <p th:inline="text">Phone Number: [[${PHONEUSER.phone_number}]]</p>
+    <p th:inline="text">Access Token: [[${PHONEUSER.access_token}]]</p>
+</body>
+</html>

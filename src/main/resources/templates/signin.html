@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Login</title>
+<script th:src="@{/js/sms-login.js}"></script>
+<script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+
+</head>
+<body>
+	<select id="country_code" >
+		<option value="+855">+855</option>
+	</select>
+	<input placeholder="phone number" id="phone_number" value=""/>
+	<br />
+	<br />
+	<button onclick="smsLogin();">Login</button>
+	<form id="login_success" method="post" th:object="${AccKit}" th:action="@{/signin/next}">
+		<input id="csrf" type="hidden" name="csrf" th:field="*{csrf}" />
+		<input id="code" type="hidden" name="code" th:field="*{code}" />
+	</form>
+</body>
+</html>

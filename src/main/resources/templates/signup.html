@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Signup</title>
+<script th:src="@{/js/sms-login.js}"></script>
+<script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+
+</head>
+	<form id="login_success" method="post" th:object="${AccKit}" th:action="@{/check}">
+		FirstName: <input type="text" placeholder="first name" /> <br />
+		Lastname: <input type="text" placeholder="last name" /> <br />
+		Gender: <input type="radio" name="gender" value="Male" /> Male 
+		<input type="radio" name="gender" value="Female" /> Female 
+		<input type="text" placeholder="phone" /> <br />
+		<input type="text" placeholder="photo url" /> <br />
+		
+		<input id="csrf" type="hidden" name="csrf" th:field="*{csrf}" />
+		<input id="code" type="hidden" name="code" th:field="*{code}" />
+	</form>
+</body>
+</html>

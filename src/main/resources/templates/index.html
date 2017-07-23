@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Welcome</title>
+<script th:src="@{/static/js/sms-login.js}"></script>
+<script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+
+</head>
+<body>
+	<h1>Welcome <span th:text="${user.first_name} + ' ' + ${user.last_name}">USER</span></h1>
+	<img th:src="${user.photo}" style="width: 200px; height: 200px"/>
+</body>
+</html>
